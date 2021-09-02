@@ -25,11 +25,14 @@ def getWeather(canvas):
     label2.config(text = final_data)
 
 
+
 canvas = tk.Tk()
-canvas.geometry("700x500")
+canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file='/home/vengence/Apps/Weather/weather.png'))
+
+canvas.geometry("700x600")
 canvas.title("Weather App")
 f = ("poppins", 15, "bold")
-t = ("poppins", 35, "bold")
+t = ("Poplar Std", 35, "bold")
 
 textField = tk.Entry(canvas, justify='center', width = 20, font = t)
 textField.pack(pady = 20)
