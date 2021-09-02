@@ -28,7 +28,7 @@ pip3 install tk
 ```
 ## Running 
 ```
-git clone https://github.com/VENGENCE7/Minimalist_WeatherAPI.git
+git clone https://github.com/VENGENCE7/Minimalist_Weather_APP.git
 python3 Weather_App.py
 ```
 
