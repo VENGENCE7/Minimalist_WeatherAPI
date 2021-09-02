@@ -3,7 +3,10 @@ city of user's choice is  taken as input and results are displayed
  
  ## ScreenShots 
  
+ ### Light-Mode
 ![W1](https://user-images.githubusercontent.com/86911386/131793977-70a74a2d-3e54-43f5-8dd9-2db4f054ed6a.png)
+### Dark-Mode
+![image](https://user-images.githubusercontent.com/86911386/131818256-73272a2f-719a-4191-8ecc-6903a63f7850.png)
 
 
 # Installation 
