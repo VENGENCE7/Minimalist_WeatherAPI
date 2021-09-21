@@ -5,9 +5,11 @@
  ## ScreenShots 
  
  ### Light-Mode
-![W1](https://user-images.githubusercontent.com/86911386/131793977-70a74a2d-3e54-43f5-8dd9-2db4f054ed6a.png)
+![Screenshot from 2021-09-21 22-26-57](https://user-images.githubusercontent.com/86911386/134214768-812a1457-e693-439c-90b3-85e2ebdf0c34.png)
+
 ### Dark-Mode
-![image](https://user-images.githubusercontent.com/86911386/131818256-73272a2f-719a-4191-8ecc-6903a63f7850.png)
+![Screenshot from 2021-09-21 22-27-52](https://user-images.githubusercontent.com/86911386/134214855-10f8146c-c224-41a2-a5fc-36e13435ac7a.png)
+
 
 
 # Installation 
