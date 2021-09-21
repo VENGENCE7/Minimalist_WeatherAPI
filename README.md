@@ -8,7 +8,8 @@
 ![Screenshot from 2021-09-21 22-26-57](https://user-images.githubusercontent.com/86911386/134214768-812a1457-e693-439c-90b3-85e2ebdf0c34.png)
 
 ### Dark-Mode
-![Screenshot from 2021-09-21 22-27-52](https://user-images.githubusercontent.com/86911386/134214855-10f8146c-c224-41a2-a5fc-36e13435ac7a.png)
+![Screenshot from 2021-09-21 22-33-03](https://user-images.githubusercontent.com/86911386/134215520-2f7e6a01-ec01-43f1-9a03-52147b304e8b.png)
+
 
 
 
