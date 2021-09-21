@@ -1,5 +1,6 @@
 # WeatherAPI displays weather condition of a city 
-city of user's choice is  taken as input and results are displayed
+- city of user's choice is  taken as input and results are displayed
+- Option to move to System Tray and System notifications 
  
  ## ScreenShots 
  
@@ -28,6 +29,8 @@ cd <extracted_folder_name>
 
 ```
 pip3 install tk 
+pip3 install requests
+pip3 isntall pystray
 ```
 ## Running 
 ```
