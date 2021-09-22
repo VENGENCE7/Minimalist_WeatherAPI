@@ -10,9 +10,13 @@ from PIL import Image
 import os
 import sys
 
+# import win10toast for WINDOWS
+#from win10toast import ToastNotifier
 
 canvas = tk.Tk()
-     
+
+# create an object to ToastNotifier class   FOR WINDOWS
+#toast = ToastNotifier()
 
 canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file='/home/vengence/Apps/Weather/Weather-Light-Tray/weather.png'))
 canvas.geometry("700x700")
@@ -87,6 +91,11 @@ def getWeather(canvas):
    city.upper()   
    notif=city+" Condition:"+condition+"'  'Temp:"+str(temp)+"°C"
    os.system("notify-send -t 10 -i '/home/vengence/Apps/Weather/Weather-Light-Tray/weather.png' "+notif) 
+   
+     #FOR WINDOWS NOTIFICATION
+     '''notif=" Condition:"+condition+"  Temp:"+str(temp)+"°C"
+   toast.show_toast(city, notif, duration = 5,
+   icon_path ="E:\Weather\Weather-Dark-Tray\weather.ico",threaded=True) '''
    
 
       
