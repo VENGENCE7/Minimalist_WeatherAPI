@@ -36,6 +36,7 @@ cd <extracted_folder_name>
 pip3 install tk 
 pip3 install requests
 pip3 isntall pystray
+(for windows)pip3 install win10toast
 ```
 ## Running 
 ```
