@@ -13,14 +13,11 @@ import os
 # import win10toast 
 from win10toast import ToastNotifier
 
-dirname = os.path.abspath(__file__)
-dirname=dirname[:-15]
-dirname=dirname.replace("'\'","\\")
 
 canvas = tk.Tk()
      
 
-canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file=dirname+'weather.png'))
+canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file='weather.png'))
 canvas.geometry("500x500")
 canvas['bg']="#D1F2EB"
 canvas.title("Weather App")
@@ -60,7 +57,7 @@ def show_window(icon):
 def hide_window():
     if N.get()==1:
         canvas.withdraw()
-        image=Image.open(dirname+"weather.png")
+        image=Image.open("weather.png")
         menu=(item('Quit', quit_window), item('Show', show_window),item('Notify Now',notify))
         icon=pystray.Icon("weather", image, "My System Tray Icon", menu)
         icon.run()
@@ -98,7 +95,7 @@ def getWeather(canvas):
 
    notif=" Condition:"+condition+"  Temp:"+str(temp)+"°C"
    toast.show_toast(city, notif, duration = 3,
-   icon_path =dirname+"weather.ico",threaded=True) 
+   icon_path ="weather.ico",threaded=True) 
    
 
 
