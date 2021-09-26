@@ -8,7 +8,6 @@ import pystray
 from PIL import Image
 
 import sys
-import os
 
 # import win10toast 
 from win10toast import ToastNotifier
