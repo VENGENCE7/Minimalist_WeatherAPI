@@ -7,37 +7,43 @@ from pystray import MenuItem as item
 import pystray
 from PIL import Image
 
-import os
 import sys
+import os
 
-# import win10toast for WINDOWS
-#from win10toast import ToastNotifier
+# import win10toast 
+from win10toast import ToastNotifier
+
+dirname = os.path.abspath(__file__)
+dirname=dirname[:-15]
+dirname=dirname.replace("'\'","\\")
 
 canvas = tk.Tk()
+     
 
-# create an object to ToastNotifier class   FOR WINDOWS
-#toast = ToastNotifier()
-
-canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file='/home/vengence/Apps/Weather/Weather-Light-Tray/weather.png'))
-canvas.geometry("700x700")
+canvas.tk.call('wm', 'iconphoto', canvas._w, tk.PhotoImage(file=dirname+'weather.png'))
+canvas.geometry("500x500")
+canvas['bg']="#D1F2EB"
 canvas.title("Weather App")
 f1 = ("poppins", 18, "bold")
 f2 = ("Poplar Std", 35, "bold")
 f3 = ("Tekton Pro Ext",15)
 
-textField = tk.Entry(canvas, justify='center', width = 20, font = f2)
+textField = tk.Entry(canvas, justify='center',bg='#85C1E9', width = 20, font = f2)
 textField.pack(pady = 20)
 textField.focus()
 
 
-label1 = tk.Label(canvas, font=f2)
+label1 = tk.Label(canvas,bg='#D1F2EB', font=f2)
 label1.pack()
-label2 = tk.Label(canvas, font=f1)
+label2 = tk.Label(canvas,bg='#D1F2EB', font=f1)
 label2.pack()
 
 N = tk.IntVar()
-NC = tk.Checkbutton(canvas, font=f3,text = 'Move to tray',bd=4,variable=N,onvalue=1, offvalue=0)
+NC = tk.Checkbutton(canvas, font=f3,text = 'Move to tray',bd=4,bg='#28B463',variable=N,onvalue=1, offvalue=0)
 NC.pack(side='bottom')
+
+# create an object to ToastNotifier class
+toast = ToastNotifier()
 
 # Define a function for quit the window
 def quit_window(icon):
@@ -54,7 +60,7 @@ def show_window(icon):
 def hide_window():
     if N.get()==1:
         canvas.withdraw()
-        image=Image.open("/home/vengence/Apps/Weather/Weather-Light-Tray/weather.png")
+        image=Image.open(dirname+"weather.png")
         menu=(item('Quit', quit_window), item('Show', show_window),item('Notify Now',notify))
         icon=pystray.Icon("weather", image, "My System Tray Icon", menu)
         icon.run()
@@ -87,16 +93,14 @@ def getWeather(canvas):
    final_data = "\n"+ "Min Temp: " + str(min_temp) + "°C" + "\n" + "Max Temp: " + str(max_temp) + "°C" +"\n" + "Pressure: " + str(pressure) + "\n" +"Humidity: " + str(humidity) + "\n" +"Wind Speed: " + str(wind) + "\n" + "Sunrise: " + sunrise + "\n" + "Sunset: " + sunset
    label1.config(text = final_info)
    label2.config(text = final_data)
+  
+   city.upper()
 
-   city.upper()   
-   notif=city+" Condition:"+condition+"'  'Temp:"+str(temp)+"°C"
-   os.system("notify-send -t 10 -i '/home/vengence/Apps/Weather/Weather-Light-Tray/weather.png' "+notif) 
+   notif=" Condition:"+condition+"  Temp:"+str(temp)+"°C"
+   toast.show_toast(city, notif, duration = 3,
+   icon_path =dirname+"weather.ico",threaded=True) 
    
-     #FOR WINDOWS NOTIFICATION
-     '''notif=" Condition:"+condition+"  Temp:"+str(temp)+"°C"
-   toast.show_toast(city, notif, duration = 5,
-   icon_path ="E:\Weather\Weather-Dark-Tray\weather.ico",threaded=True) '''
-   
+
 
       
 textField.bind('<Return>', getWeather)
