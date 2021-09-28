@@ -11,7 +11,8 @@ import sys
 
 # import win10toast 
 from win10toast import ToastNotifier
-
+'''for LINUX 
+import os'''
 
 canvas = tk.Tk()
      
@@ -94,7 +95,11 @@ def getWeather(canvas):
 
    notif=" Condition:"+condition+"  Temp:"+str(temp)+"°C"
    toast.show_toast(city, notif, duration = 3,
-   icon_path ="weather.ico",threaded=True) 
+   icon_path ="weather.ico",threaded=True)
+   '''for LINUX:
+   img=str(os.getcwd())
+   img=img+"/weather.png"
+   os.system("notify-send -t 10 -i '"+img+"' "+notif) '''
    
 
 
